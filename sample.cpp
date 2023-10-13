@@ -1,11 +1,9 @@
 #include <iostream>
+using namespace std;
 
 int main(){
 
-    std::cout << "Hello C++\n" :
-
-    std::cout << "OK";
-
-    return 0;
-
+     cout << "Hellow world!" << endl;
+     cout << 20;
+     
 }
