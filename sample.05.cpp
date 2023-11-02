@@ -31,9 +31,7 @@ int main(void) {
 		reset();
 		cin >> c;
 
-		if (c == 'q') {
-			break;
-		}
+		if (c == 'q') { break; }
 
 		switch (c) {
 			case 'w':
@@ -53,7 +51,7 @@ int main(void) {
                 break;
 		}
 		Position();
-		Show();
+		//Show();
 	}
 	return 0;
 }
@@ -104,15 +102,18 @@ void Position(void) {
 				sharpX[0] = x;
 				sharpY[0] = y;
 			} 
+
+			if ( there[y][x] == 2){ cout << "*"; }
+			else if(there[y][x] == 1) { cout << "#"; }
+			else { cout << "-"; }
 		}
+		cout << endl;
 	}
+
+	for (int a = 1 ; a < 5 ; a++){ there[sharpY[a]][sharpX[a]] = 1; }
 }
 
 void Show(){
-
-	for (int a = 0 ; a < 5 ; a++){
-		there[sharpY[a]][sharpX[a]] = 1;
-	}
 
 	for ( int y = 0 ; y < MaxY ; y++){
 		for ( int x = 0 ; x < MaxX ; x++){
