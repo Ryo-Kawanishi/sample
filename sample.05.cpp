@@ -14,7 +14,6 @@ void reset(void);
 
 int Px;
 int Py;
-void reset(void);
 int there[10][10], sharpX[5], sharpY[5];
 
 int main(void) {
@@ -29,6 +28,7 @@ int main(void) {
 
 	while (1) {
 
+		reset();
 		cin >> c;
 
 		if (c == 'q') {
@@ -52,7 +52,6 @@ int main(void) {
                 Down();
                 break;
 		}
-		reset();
 		Position();
 		Show();
 	}
@@ -97,7 +96,7 @@ void Position(void) {
 		for (int x = 0; x < MaxX; x ++) {
 			if ((x == Px) && (y == Py)) {
 
-				for ( int a = 0 ; a < 4 ; a++){
+				for ( int a = 3 ; a >= 0 ; a--){
 					sharpX[a] = sharpX[a + 1];
 					sharpY[a] = sharpY[a + 1];
 				}
@@ -111,7 +110,7 @@ void Position(void) {
 
 void Show(){
 
-	for (int a = 1 ; a < 5 ; a++){
+	for (int a = 0 ; a < 5 ; a++){
 		there[sharpY[a]][sharpX[a]] = 1;
 	}
 
